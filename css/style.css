@@ -1,0 +1,665 @@
+/* appling google font over the website  */
+/* Prevent horizontal scrolling */
+/* Preloader Fullscreen */
+
+
+html, body {
+    overflow-x: hidden;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    padding-top: 80px;
+    background-color: rgb(39, 51, 41);
+    color: white; /* Ensures text is visible */
+}
+
+/* styling menu icon */
+
+.nav-menu{
+    border: none;
+    background-color: #050807;
+    font-size: 1.5rem;
+    color: #fca61f;
+}
+/* styling navbar links  */
+.navbar-nav a{
+    color: rgb(0, 0, 0);
+    position: relative;
+}
+.navbar{
+    background-color: rgb(233 233 225);
+}
+.navbar-nav a:hover{
+    color: #fca61f;
+}
+.navbar-nav a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    top: 35px;
+    position: absolute;
+    background: #fca61f;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+.navbar-nav a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+  /* styling contact btn  */
+#navbar-top {
+    /* position: fixed; */
+    width: 100%;
+    z-index: 1000;
+    /* box-shadow: 0px 0px 15px rgba(111, 52, 254, 0.8), 
+                0px 0px 25px rgba(255, 0, 255, 0.5);
+    transition: box-shadow 0.3s ease-in-out; */
+}
+/* 
+#navbar-top:hover {
+    box-shadow: 0px 0px 25px rgba(111, 52, 254, 1), 
+                0px 0px 40px rgba(255, 0, 255, 0.8);
+} */
+.c-btn{
+    border: none;
+    background: #fca61f;
+    color: #fff;
+    font-size: 1.2rem;
+}
+/* styling home section starts */
+.home {
+    background: linear-gradient(33deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+    padding: 30px 0px 10px 0px;
+}
+.home h2{
+    font-size: 3rem;
+    line-height: 4rem;
+}
+.c-orange{
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 4rem;
+}
+/* Home Section Background */
+.home {
+    position: relative;
+    padding: 5rem 0;
+    background: linear-gradient(to right, #070606, #0d0d0d); /* White with light gray */
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}
+
+/* Subtle Neon Glow Effect */
+.home::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, rgba(0, 0, 0, 0.1), rgba(50, 50, 50, 0.2), rgba(0, 0, 0, 0.1));
+    filter: blur(100px);
+    animation: neonRotate 8s linear infinite;
+    z-index: 0;
+}
+
+/* Animation for Subtle Glow Movement */
+@keyframes neonRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ensure content is above the background */
+.home .row {
+    position: relative;
+    z-index: 1;
+    padding-top: 53px;
+}
+
+/* Paragraph Styling with Subtle Glow */
+.home p {
+    width: fit-content;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #333; /* Dark gray for readability */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Neon Button Effect */
+.home .h-btn {
+    background: linear-gradient(45deg, #ffffff, #dcdcdc);
+    color: black;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: 0.4s ease-in-out;
+}
+
+.home .h-btn:hover {
+    background: linear-gradient(45deg, #ddd, #bbb);
+    color: black;
+    transform: translateY(-10px);
+    transition-duration: 0.6s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.link{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fca61f;
+    position: relative;
+}
+.link::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    top: 20px;
+    background-color: #6f34fe;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.link:hover{
+    color: #6f34fe;
+}
+.link:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+/* adding animation to home section image  */
+.home img {
+    width: 74vh;
+    height: 76vh;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 20px #ff5733, 0 0 40px #ff5733; /* Stronger Initial Glow */
+    
+    /* Apply both movement and glowing animations */
+    animation: glowAnimation 1.5s infinite alternate, moveSlightly 1s ease-in-out infinite alternate;
+}
+
+/* Stronger Glowing Effect */
+@keyframes glowAnimation {
+    0% {
+        box-shadow: 0 0 20px #ff5733, 0 0 40px #ff5733;
+    }
+    50% {
+        box-shadow: 0 0 30px #33ff57, 0 0 60px #33ff57;
+    }
+    100% {
+        box-shadow: 0 0 20px #3357ff, 0 0 40px #3357ff;
+    }
+}
+
+/* Slight left-to-right movement */
+@keyframes moveSlightly {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(15px); /* Small subtle movement */
+    }
+}
+
+
+/* Glowing effect */
+@keyframes glowAnimation {
+    0% {
+        box-shadow: 0 0 10px #ff5733;
+    }
+    50% {
+        box-shadow: 0 0 15px #33ff57;
+    }
+    100% {
+        box-shadow: 0 0 10px #3357ff;
+    }
+}
+
+/* Slight left-to-right movement */
+@keyframes moveSlightly {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(15px); /* Small subtle movement */
+    }
+}
+
+
+/* expertise section starts */
+.heading small{
+    color: #e5e6cc;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.heading h3{
+    margin-top: 0.5rem;
+    color: #3a2f8f;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.expertise h4{
+    color: #f9f9ef;
+    font-weight: 700;
+}
+.expertise a{
+    text-decoration: none;
+    color: #fca61f;
+}
+.expertise a:hover{
+    color: #6f34fe;
+}
+.expertise .service-card{
+    text-align: center;
+    padding: 15px 15px;
+    border-radius: 0.7rem;
+}
+
+.expertise .row{
+    .img-fluid {
+        width: 60% !important;
+        max-width: 100vh;
+        height: 31vh;
+    }
+}
+/* skill section starts */
+.skill{
+    background-color: rgb(16, 16, 18);
+}
+.py-5 {
+    padding-top: 11rem !important;
+    padding-bottom: 3rem !important;
+}
+.text-muted {
+    --bs-text-opacity: 1;
+    color: #e8ebdb !important;
+}
+.text-center {
+    text-align: center !important;
+    padding-top: 0px;
+}
+.progress-card{
+    padding: 12% 10% 10% 15%;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10%;
+}
+.progress-card:hover{
+    transform: scale(1.1,1.1);
+    transition-duration: 0.6s;
+}
+.circular-progress{
+    position: relative;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    background: conic-gradient(#7d2ae8 3.6deg, #ededed 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.progress-value{
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.html-progress{
+    color: #fca61f;
+}
+.javascript-progress{
+    color: #6f34fe;
+}
+.php-progress{
+    color: #20c997;
+}
+.reactjs-progress{
+    color: #3f396d;
+}
+.text{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+}
+.heading p{
+    font-size: 1.3rem;
+    
+}
+
+/* portfolio section starts */
+#myBtnContainer{
+    margin-bottom: 45px;
+}
+#myBtnContainer button{
+  border: none;
+  color: black;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;   
+  display: inline-block;
+  margin: 0 25px;
+}
+#myBtnContainer button:hover{
+    color: #fca61f;
+}
+
+#myBtnContainer button:focus{
+    outline: none;
+}
+.post .content h4{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.post .card{
+    border: none;
+}
+
+/* testimonial section starts */
+.testimonial img:hover{
+    transform: scale(1.2,1.2);
+    transition-duration: 1s;
+}
+.testimonial h4{
+    color: #3f396d;
+}
+.testimonial i{
+    font-size: 2.9rem;
+    color: #fca61f;
+    
+}
+.testimonial .nextprev-btn{
+    border: none;
+    background-color: #fff;
+}
+.prev:hover,.prev-btn:hover{
+    color:#6f34fe;
+    transform: translateX(-10px);
+    transition-duration: 1s;
+}
+.next:hover,.next-btn:hover{
+    color:#6f34fe;
+    transform: translateX(10px);
+    transition-duration: 1s;
+}
+
+/* blog section starts */
+.blog{
+    background-color: #f2f2ff;
+}
+.blog .blogpost .card{
+    border: none;
+    border-radius: 5%;
+}
+.nav-bg{
+    background-color: #fff;
+}
+
+.blog .blogpost small{
+    color: #6f34fe;
+    font-size: 1.1rem;
+}
+.blog .blogpost h4,.blogpost a{
+    color: #3f396d;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+.blogpost a:hover{
+    color: #fca61f;
+}
+.blog .blogpost .read-more-btn{
+    text-decoration: none;
+    color: #fca61f;
+    font-size: 1.1rem;
+}
+.blog .blogpost .read-more-btn:hover{
+    color: #6f34fe;
+}
+/* styling modal group  */
+.btn-c{
+    margin-left: 94%;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    margin-top: -3%;
+}
+.btn-c i{
+    color: #fca61f;
+}
+.modal-body .content span{
+    font-size: 1rem;
+}
+.modal-body .content small{
+    font-size: 1rem;
+    color: #6f34fe;
+}
+/* contact section starts */
+.contact{
+    background-color: #0a0a0a;
+}
+.contact-details i{
+    font-size: 1.5rem;
+    color: #fca61f;
+}
+.contact-details p{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+.contact-form .form-control:focus{
+    box-shadow: none;
+    border: 1px solid #fca61f;
+}
+.contact-form .form-control{
+    padding: 10px 10px;
+    width: 80%;
+}
+
+/* footer section starts */
+footer{
+    background-color: #29391e;
+}
+
+footer .link-group a{
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+footer .link-group a:hover{
+    color: #fca61f;
+}
+.social-links button{
+    border: none;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    background-color: #fff;
+    padding: 14px 15px 10px 15px;
+}
+.social-links .dribble{
+    color: #f33a7e;
+}
+.social-links button:hover{
+    color: #fff;
+    transform: translateY(-20px);
+    transition-duration: 1s;
+}
+.social-links .dribble:hover{
+    background-color: #f33a7e;
+}
+.social-links .whatsapp{
+    color: #25D366;
+}
+.social-links .whatsapp:hover{
+    background-color: #25D366;
+}
+.social-links .behance{
+    color: #255afc;
+}
+.social-links .behance:hover{
+    background-color: #255afc;
+}
+
+/* styling back to top button */
+#btn-back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    font-size: 1.4rem;
+    background-color: #fca61f;
+    color: #fff;
+    animation: pulse 3s infinite;
+}
+.folders {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center; /* Ensures all items align properly */
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 41vh;
+    padding: 17px 0;
+}
+
+
+.folder {
+    transition: transform 0.1s ease-in-out;
+    width: 220px; /* Increased width */
+    height: 240px; /* Increased height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f8f9fa;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    animation: floating 4s infinite ease-in-out;
+}
+
+.folder img {
+    width: 100%; /* Make image fill the folder */
+    height: 160px; /* Increased image size */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.folder h4 {
+    margin-top: 10px;
+    font-size: 20px; /* Increased text size */
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+.folder:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes floating {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(5px, -5px); }
+    50% { transform: translate(-5px, 5px); }
+    75% { transform: translate(5px, -5px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes glowing {
+    0% { text-shadow: 0 0 5px #ff0000, 0 0 10px #ff7300, 0 0 15px #ff0000; transform: translateX(0); }
+    25% { text-shadow: 0 0 5px #ff7300, 0 0 10px #ff0000, 0 0 15px #ff7300; transform: translateX(2px); }
+    50% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ffff, 0 0 15px #00ff00; transform: translateX(-2px); }
+    75% { text-shadow: 0 0 5px #007bff, 0 0 10px #00ff00, 0 0 15px #007bff; transform: translateX(2px); }
+    100% { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff7300, 0 0 15px #ff00ff; transform: translateX(0); }
+}
+
+.heading h3 {
+    font-size: 2.8rem; /* Bigger heading */
+    font-weight: bold;
+    color: rgb(202, 199, 182); /* Base text color */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Simple black shadow */
+    position: relative;
+}
+
+
+h6 {
+    font-size: 22px; /* Adjust size as needed */
+    font-weight: bold;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    border-right: 2px solid black; /* Cursor effect */
+    display: inline-block;
+    animation: typing 4s steps(40, end) forwards, blink 0.7s infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Blinking cursor */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+.row {
+    --bs-gutter-x: 0.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+.card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    max-width: 1200px;
+    max-height: 675px;
+}
+.aspect-ratio-16x9 {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  }
+  
+  .aspect-ratio-16x9 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
